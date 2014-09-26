@@ -12,8 +12,6 @@ var exec = require("child_process").exec;
 var sys = require("sys");
 var async = require("async");
 
-
-
 var ignore = ["_debugger", "_http_agent", "_http_client", "_http_common", "_http_incoming", "_http_outgoing", "_http_server", "_linklist", "_stream_duplex", "_stream_passthrough", "_stream_readable", "_stream_transform", "_stream_writable", "_tls_common", "_tls_legacy", "_tls_wrap", "assert", "buffer", "child_process", "cluster", "console", "constants", "crypto", "dgram", "dns", "domain", "events", "freelist", "fs", "http", "https", "module", "net", "os", "path", "punycode", "querystring", "readline", "repl", "smalloc", "stream", "string_decoder", "sys", "timers", "tls", "tracing", "tty", "url", "util", "vm", "zlib"];
 
 var ignoreFiles = [
@@ -49,8 +47,6 @@ for (var x in files) {
         estraverse.traverse(tree, {
             enter: function(node, parent) {
 
-                //console.log(node);
-                //console.log();
                 if (
                         node.type == "CallExpression"
                         && node.callee.type == "Identifier"
@@ -98,7 +94,6 @@ async.forEach(requires, function(name, cb) {
 
     exec("npm view " + name + " --json --quiet", function(error, stdout, stderr) {
         //sys.print(stdout);
-
         //sys.print(stderr.red);
         if (error !== null) {
             currents[name] = "unknown";
@@ -162,8 +157,6 @@ async.forEach(requires, function(name, cb) {
         console.log();
         console.log("This was just a test run. " + "package.json".yellow + " has not been modified.  Use " + "--save".blue + " to update " + "package.json".yellow + ".");
     }
-
-//console.log(versions);
 
 });
 

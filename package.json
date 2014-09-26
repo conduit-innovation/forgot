@@ -1,5 +1,5 @@
 {
-  "name": "forgot",
+  "name": "npm-forgot",
   "version": "0.0.1",
   "description": "Build a package.json from require() calls",
   "main": "forgot.js",
@@ -18,10 +18,11 @@
     "q": "^1.0.1"
   },
   "bin": {
-    "forgot": "./forgot.js"
+    "forgot": "./forgot.js" 
   },
    "repository": {
     "type": "git",
     "url": "git://github.com/talss89/forgot.git"
-  }
+  },
+  "preferGlobal": true
 }
