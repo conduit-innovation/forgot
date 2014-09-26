@@ -12,17 +12,9 @@ var exec = require("child_process").exec;
 var sys = require("sys");
 var async = require("async");
 
-var ignore = [
-    "util",
-    "vm",
-    "url",
-    "path",
-    "fs",
-    "http",
-    "stream",
-    "sys",
-    "child_process"
-];
+
+
+var ignore = ["_debugger", "_http_agent", "_http_client", "_http_common", "_http_incoming", "_http_outgoing", "_http_server", "_linklist", "_stream_duplex", "_stream_passthrough", "_stream_readable", "_stream_transform", "_stream_writable", "_tls_common", "_tls_legacy", "_tls_wrap", "assert", "buffer", "child_process", "cluster", "console", "constants", "crypto", "dgram", "dns", "domain", "events", "freelist", "fs", "http", "https", "module", "net", "os", "path", "punycode", "querystring", "readline", "repl", "smalloc", "stream", "string_decoder", "sys", "timers", "tls", "tracing", "tty", "url", "util", "vm", "zlib"];
 
 var ignoreFiles = [
     "Gruntfile.js"
