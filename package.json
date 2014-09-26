@@ -19,5 +19,9 @@
   },
   "bin": {
     "forgot": "./forgot.js"
+  },
+   "repository": {
+    "type": "git",
+    "url": "git://github.com/talss89/forgot.git"
   }
 }
